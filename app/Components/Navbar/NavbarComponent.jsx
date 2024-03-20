@@ -19,7 +19,7 @@ const NavbarComponent = ({ isLogued }) => {
 
   return (
 
-    <header className="bg-grey-user">
+    <header className="bg-grey-user opacity-100 fixed top-0 w-full z-50">
 
       <nav className='max-w-[1280px] mx-auto py-2 flex flex-row justify-between'>
 

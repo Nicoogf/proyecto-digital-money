@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Background } from "./Components/Background/Background";
+import NavbarComponent from "./Components/Navbar/NavbarComponent";
+import OpcitionsBottomComponent from "./Components/OptionsBottom/OpcitionsBottomComponent";
+import FooterComponent from "./Components/Footer/FooterComponent";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,11 +14,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const isLogued = true
   return (
     <html lang="en">
       <body className={inter.className}>
+        <NavbarComponent isLogued={isLogued} />
         <Background />
-        {children}
+        <main className="relative w-[98%] grid grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]">
+          <nav className='hidden sm:grid bg-blue-300 sm:col-span-1  md:col-span-2'>
+            Barra Lateral
+          </nav>
+          {children}
+          <aside className='hidden bg-blue-400 lg:grid lg:col-span-3'>
+            Aside
+          </aside>
+        </main>
+        <OpcitionsBottomComponent isLogued={isLogued} />
+        <FooterComponent isLogued={isLogued} />
       </body>
     </html>
   );

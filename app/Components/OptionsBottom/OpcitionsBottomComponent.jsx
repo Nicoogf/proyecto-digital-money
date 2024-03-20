@@ -8,9 +8,9 @@ import { GiReceiveMoney } from "react-icons/gi";
 import profile from "../../../public/profile.jpg"
 import Image from 'next/image';
 
-const OpcitionsBottomComponent = () => {
+const OpcitionsBottomComponent = ({isLogued}) => {
     return (
-        <nav className='bg-grey-user w-full fixed bottom-0 h-[50px] flex items-center sm:hidden'>
+        <nav className={`${isLogued ? "block" : "hidden"} bg-grey-user w-full fixed bottom-0 h-[50px] flex items-center sm:hidden`}>
             <div className='flex flex-row w-[90%] mx-auto  justify-between items-center'>
                 <Link href="" className='px-4 text-2xl h-[45px] flex items-center text-green-lime hover:bg-grey-dark transition-all duration-200'>
                     <IoHomeSharp />

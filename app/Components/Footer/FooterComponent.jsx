@@ -1,11 +1,11 @@
 import React from 'react'
 
-const FooterComponent = ({isLogued}) => {
+const FooterComponent = () => {
   return (
-    <footer className={`${isLogued ? "hidden" : "block"} fixed bottom-0 w-full bg-grey-user text-green-lime `}>
-        <p className='text-xs font-thin py-2 ml-2'> 
-        Digital Money App 2024 
-        </p>
+    <footer className={`hidden sm:flex fixed bottom-0 w-full bg-grey-user text-green-lime h-[50px]  items-center`}>
+      <h6 className='text-xs font-thin py-2 ml-2 w-full max-w-[1280px] mx-auto'>
+        Digital Money App 2024
+      </h6>
     </footer>
   )
 }
