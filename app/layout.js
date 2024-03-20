@@ -4,7 +4,13 @@ import { Background } from "./Components/Background/Background";
 import NavbarComponent from "./Components/Navbar/NavbarComponent";
 import OpcitionsBottomComponent from "./Components/OptionsBottom/OpcitionsBottomComponent";
 import FooterComponent from "./Components/Footer/FooterComponent";
-
+import { IoHomeSharp } from "react-icons/io5";
+import { FaMoneyBillWave, FaUserFriends } from "react-icons/fa";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { GiReceiveMoney } from "react-icons/gi";
+import Link from "next/link";
+import Image from "next/image";
+import profile from "../public/profile.jpg"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,8 +27,40 @@ export default function RootLayout({ children }) {
         <NavbarComponent isLogued={isLogued} />
         <Background />
         <main className="relative w-[98%] grid grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]">
-          <nav className='hidden sm:grid bg-blue-300 sm:col-span-1  md:col-span-2'>
-            Barra Lateral
+          <nav className='hidden sm:grid bg-grey-user sm:col-span-1  xl:col-span-2 rounded-lg'>
+            <div className="flex flex-col my-4">
+
+              <Link href="" className='text-green-lime flex flex-row items-center py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <IoHomeSharp className="text-2xl mx-auto xl:mx-0 xl:ml-4" />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> Inicio </h6>
+              </Link>
+
+              <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <FaUserFriends className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> Pagar </h6>
+              </Link>
+
+              <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <RiSendPlaneFill className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> Transferir </h6>
+              </Link>
+
+              <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <FaMoneyBillWave className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> CBU </h6>
+              </Link>
+
+              <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <GiReceiveMoney className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> Movimientos </h6>
+              </Link>
+
+              <Link href="" className='text-green-lime flex flex-row items-center py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+                <Image src={profile} className='w-6 h-6 object-cover rounded-full mx-auto  xl:mx-0 xl:ml-4' />
+                <h6 className="hidden xl:flex text-green-lime text-sm"> Perfil </h6>
+              </Link>
+
+            </div>
           </nav>
           {children}
           <aside className='hidden bg-blue-400 lg:grid lg:col-span-3'>
