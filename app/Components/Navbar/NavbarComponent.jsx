@@ -9,7 +9,7 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import Link from 'next/link';
 
 const NavbarComponent = () => {
-  const isLogued = false
+  const isLogued = true
 
   return (
  
@@ -21,11 +21,12 @@ const NavbarComponent = () => {
          width={50}
          height={50}
          alt='Logo Digital Money'
-         className='ml-5 w-10 h-10 object-contain xl:ml-0'
+         className='ml-5 w-10 h-10 object-contain xl:ml-0 animate-pulse'
       />
 
       {/*  Menu Usuario Logueado */}
-      { isLogued ? (
+      { isLogued ? 
+      (
         <div className='flex flex-row mr-5 items-center gap-x-2 px-3 rounded-lg bg-grey-dark cursor-pointer'>
           <Image src={profile}
                  width={50}
@@ -38,19 +39,21 @@ const NavbarComponent = () => {
 
            <MdOutlineArrowDropDown />
 
-           </div>
-       ) : (
-       <div className='flex flex-row mr-5 items-center gap-x-4'>
+        </div>
+       ) 
+       : 
+       (
+       <div className='flex flex-row items-center gap-x-2 mr-2 sm:gap-x-4 sm:mr-5'>
        <Link href={""}>
-        <h6 className='text-sm bg-grey-user border border-green-lime text-green-lime px-3 py-1 rounded-lg font-semibold hover:bg-green-lime hover:text-grey-dark transition-all duration-200'> Ingresar</h6>
+        <h6 className='text-sm bg-grey-user border-2 border-green-lime text-green-lime px-3 py-1 rounded-lg font-semibold hover:bg-green-lime hover:text-grey-dark transition-all duration-200'> Ingresar</h6>
        </Link>
        <Link href={""}>
-        <h6 className='text-gray-400 text-sm border border-gray-400  px-3 py-1 rounded-lg font-semibold hover:bg-gray-100 hover:text-grey-dark transition-all duration-200'> Registrarse</h6>
+        <h6 className='text-gray-400 text-sm border-2 border-gray-400  px-3 py-1 rounded-lg font-semibold hover:bg-gray-100 hover:text-grey-dark transition-all duration-200'> Registrarse</h6>
        </Link>
 
        </div>
-       
-       )}
+       )
+       }
                 
     </nav>
 
