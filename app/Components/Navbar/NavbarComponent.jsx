@@ -69,7 +69,7 @@ const NavbarComponent = ({ isLogued }) => {
                 </Link>
               </div>
 
-              <MdOutlineArrowDropDown />
+              <MdOutlineArrowDropDown className={`${menuProfile ? "rotate-180" : ""} transition-all duration-300`}/>
 
             </div>
           )

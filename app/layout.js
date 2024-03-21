@@ -17,7 +17,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const isLogued = true
+  const isLogued = false
 
 
   return (
@@ -35,6 +35,13 @@ export default function RootLayout({ children }) {
           {children}
 
           <AsideLateral />
+
+        </main>
+
+        <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
+        >
+
+          {children}
 
         </main>
 
