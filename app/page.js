@@ -3,8 +3,10 @@ import Link from "next/link";
 export default function Home() {
 
   return (
-    <section className='relative bg-fondo bg-cover bg-center bg-no-repeat 
-    col-span-12 sm:col-span-11 md:col-span-10 lg:col-span-7 rounded-lg'>
+
+    <section className={`grid col-span-12 sm:col-span-11 md:col-span-10 lg:col-span-7 relative bg-fondo bg-cover bg-center bg-no-repeat 
+    c rounded-lg`}>
+
       <div className="flex flex-col">
         <h2 className="text-white text-3xl font-semibold ml-4 mt-2 mb-2">
           De ahora <br />
@@ -44,6 +46,7 @@ export default function Home() {
 
 
       </div>
+
     </section>
   );
 }
