@@ -5,6 +5,7 @@ import NavbarComponent from "./Components/Navbar/NavbarComponent";
 import OpcitionsBottomComponent from "./Components/OptionsBottom/OpcitionsBottomComponent";
 import FooterComponent from "./Components/Footer/FooterComponent";
 
+
 import NavLateral from "./Components/NavLateral/NavLateral";
 import AsideLateral from "./Components/AsideLateral/AsideLateral";
 import React from "react";
@@ -19,13 +20,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   const isLogued = false
 
-
   return (
     <html lang="en">
       <body className={inter.className}>
 
-        <NavbarComponent isLogued={isLogued} />
+  
         <Background />
+        <NavbarComponent isLogued={isLogued} />
 
         <main className={`${isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
         >
@@ -39,7 +40,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
-        >
+          isLogued={false}>
 
           {children}
 
@@ -47,6 +48,8 @@ export default function RootLayout({ children }) {
 
         <OpcitionsBottomComponent isLogued={isLogued} />
         <FooterComponent isLogued={isLogued} />
+
+    
       </body>
     </html>
   );

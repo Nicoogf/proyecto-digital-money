@@ -1,7 +1,7 @@
 "use client"
+
 import React, { useState } from 'react';
 import Image from 'next/image';
-
 
 import logoOn from "../../../public/logo-on.png"
 import profile from "../../../public/profile.jpg"
@@ -76,7 +76,7 @@ const NavbarComponent = ({ isLogued }) => {
           :
           (
             <div className='flex flex-row items-center gap-x-2 mr-2 sm:gap-x-4 sm:mr-5 xl:mr-0'>
-              <Link href={""}>
+              <Link href={"/register"}>
                 <h6 className='text-sm bg-grey-user border border-green-lime text-green-lime px-3 py-1 rounded-lg  hover:bg-green-lime hover:text-grey-dark transition-all duration-200 font-normal'> Ingresar</h6>
               </Link>
               <Link href={""}>
