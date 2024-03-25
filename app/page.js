@@ -1,6 +1,11 @@
+"use client"
+
 import Link from "next/link";
+import { useSelector } from "react-redux";
 
 export default function Home() {
+  const estadoActual =  useSelector( estado => estado.initialState)
+  console.log(estadoActual)
 
   return (
 

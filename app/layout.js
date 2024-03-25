@@ -10,6 +10,7 @@ import FooterComponent from "./Components/Footer/FooterComponent";
 import NavLateral from "./Components/NavLateral/NavLateral";
 import AsideLateral from "./Components/AsideLateral/AsideLateral";
 import { StoreProvider } from "./StoreProvider";
+import { useSelector } from "react-redux";
 
 
 
@@ -22,40 +23,41 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   const isLogued = false
+ 
 
 
   return (
-    <StoreProvider> 
-    <html lang="en">
-      <body className={inter.className}>
+    <StoreProvider>
+      <html lang="en">
+        <body className={inter.className}>
 
-        <Background />
-        <NavbarComponent isLogued={isLogued} />
+          <Background />
+          <NavbarComponent isLogued={isLogued} />
 
-        <main className={`${isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
-        >
+          <main className={`${isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
+          >
 
-          <NavLateral />
+            <NavLateral />
 
-          {children}
+            {children}
 
-          <AsideLateral />
+            <AsideLateral />
 
-        </main>
+          </main>
 
-        <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
-          isLogued={false}>
+          <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
+            isLogued={false}>
 
-          {children}
+            {children}
 
-        </main>
+          </main>
 
-        <OpcitionsBottomComponent isLogued={isLogued} />
-        <FooterComponent isLogued={isLogued} />
+          <OpcitionsBottomComponent isLogued={isLogued} />
+          <FooterComponent isLogued={isLogued} />
 
 
-      </body>
-    </html>
+        </body>
+      </html>
     </StoreProvider>
   );
 }
