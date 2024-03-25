@@ -1,11 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 
 const HeaderComponent = () => {
+
   return (
+
     <header className='w-full bg-red-500'>
-        Header
+      Header
     </header>
   )
 }
 
-export default HeaderComponent ;
+export default HeaderComponent;

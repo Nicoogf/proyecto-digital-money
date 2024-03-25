@@ -8,6 +8,7 @@ import profile from "../../../public/profile.jpg"
 
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const NavbarComponent = ({ isLogued }) => {
 
@@ -16,6 +17,8 @@ const NavbarComponent = ({ isLogued }) => {
   const toggleMenu = () => {
     setMenuProfile(!menuProfile)
   }
+
+
 
   return (
 
