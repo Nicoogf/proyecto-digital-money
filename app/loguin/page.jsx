@@ -33,26 +33,26 @@ const Loguin = ({ isLogued }) => {
   }
 
   return (
-    <section className={`${estaOnline ? "invisible" : "grid"} col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-gray-900/10 rounded-lg justify-center items-center`}>
+    <section className={`${estaOnline ? "invisible" : "grid"} text-white col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-gray-900/10 rounded-lg justify-center items-center`}>
 
-      <div className={`${!inPass ? "flex" : "opacity-0 hidden "} relative opacity-1 pb-16 w-[97%] max-w-[440px] bg-gray-600/20 rounded-lg flex flex-col transition-all duration-300`}>
+      <div className={`${!inPass ? "flex" : "opacity-0 hidden "} relative opacity-1 pb-16  max-w-[450px] bg-gray-600/20 rounded-lg flex flex-col transition-all duration-300 px-16`}>
         <h2 className='text-center font-bold py-4 text-lg'> ¡Hola! Ingresa tu E-mail</h2>
         <form className='flex flex-col gap-y-3' onSubmit={handleSubmit}>
 
           <input type='text'
             placeholder='Ingesar tu Email'
-            className='w-[65%] py-2 px-3 mx-auto  placeholder:text-sm bg-gray-800/10 border-b border-green-lime outline-none text-gray-100 text-sm'
+            className='w-[85%] py-2 px-3 mx-auto  rounded-t-lg placeholder:text-sm bg-gray-800/10 border-b border-green-lime outline-none text-gray-100 text-sm'
             value={email}
             onChange={handleChange} />
 
           <div className='flex flex-col items-center gap-y-3'>
 
-            <button className='text-sm bg-transparent font-semibold text-green-lime border border-green-lime py-2 px-3 rounded-lg w-[65%] hover:bg-green-lime hover:text-grey-dark transition-all duration-300'
+            <button className='text-sm bg-transparent font-semibold text-green-lime border border-green-lime py-2 px-3 rounded-lg w-[85%] hover:bg-green-lime hover:text-grey-dark transition-all duration-300'
               onClick={backEmail}>
               Continuar
             </button>
 
-            <Link href={"/register"} className='w-[65%] text-center'>
+            <Link href={"/register"} className='w-[85%] text-center'>
               <h6 className='text-sm bg-transparent  text-gray-300 border border-gray-300 font-semibold py-2 px-3 rounded-lg hover:bg-gray-300 hover:text-grey-dark transition-all duration-300'>
                 Crear Cuenta
               </h6>
@@ -61,7 +61,7 @@ const Loguin = ({ isLogued }) => {
 
         </form>
 
-        <h6 className='absolute bottom-0 text-center w-full mt-4 text-sm bg-red-500/70 py-1 rounded-b-lg'>
+        <h6 className='absolute bottom-0 left-0 text-center w-full mt-4 text-sm bg-red-500/70 py-1 rounded-b-lg'>
           Usuario inexistente. Vuelve a intentarlo
         </h6>
 

@@ -90,7 +90,7 @@ const NavbarComponent = () => {
           :
           (
             <div className='flex flex-row items-center gap-x-2 mr-2 sm:gap-x-4 sm:mr-5 xl:mr-0'>
-              <Link href={"/register"}>
+              <Link href={"/loguin"}>
                 <h6 className='text-sm bg-grey-user border border-green-lime text-green-lime px-3 py-1 rounded-lg  hover:bg-green-lime hover:text-grey-dark transition-all duration-200 font-normal'> Ingresar</h6>
               </Link>
               <Link href={""}>

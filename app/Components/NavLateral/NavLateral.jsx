@@ -21,7 +21,7 @@ const NavLateral = () => {
 
   const estaOnline = useAppSelector(state => state.userReducer.online)
 
- 
+
 
   return (
     <nav className={
@@ -31,7 +31,7 @@ const NavLateral = () => {
 
       <div className="flex flex-col my-4">
 
-        <Link href="" className='text-green-lime flex flex-row items-center py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+        <Link href="/" className='text-green-lime flex flex-row items-center py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
           <IoHomeSharp className="text-2xl mx-auto xl:mx-0 xl:ml-4" />
           <h6 className="hidden xl:flex text-green-lime text-sm"> Inicio </h6>
         </Link>
