@@ -2,9 +2,10 @@
 
 import Link from "next/link";
 import { useSelector } from "react-redux";
+import userSlice from "./features/userSlice";
 
 export default function Home() {
-  const estadoActual =  useSelector( estado => estado.initialState)
+  const estadoActual = useSelector(state => state.userSlice.initialState)
   console.log(estadoActual)
 
   return (
