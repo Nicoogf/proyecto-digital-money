@@ -2,7 +2,7 @@ import "./Background.css"
 
 export const Background = () => {
     return (
-        <div>
+        <div className="altura-fondo">
             <div class="gradient-bg">
                 <svg xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -21,8 +21,6 @@ export const Background = () => {
                     <div class="g5"></div>
                     <div class="interactive"></div>
                 </div>
-
-
             </div>
         </div>
 

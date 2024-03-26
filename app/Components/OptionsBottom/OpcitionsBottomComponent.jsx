@@ -13,7 +13,7 @@ import { useAppSelector } from '@/redux/hooks';
 
 const OpcitionsBottomComponent = () => {
     const estaOnline = useAppSelector(state => state.userReducer.online)
-    
+
 
     return (
         <nav className={`${estaOnline ? "block" : "hidden"} bg-grey-user w-full fixed bottom-0 h-[50px] flex items-center sm:hidden`}>

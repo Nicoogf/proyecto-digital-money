@@ -10,7 +10,7 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import Link from 'next/link';
 
 
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
 
 
 
@@ -20,6 +20,7 @@ const NavbarComponent = () => {
 
   const [menuProfile, setMenuProfile] = useState(false)
 
+
   const toggleMenu = () => {
     setMenuProfile(!menuProfile)
   }
@@ -27,10 +28,12 @@ const NavbarComponent = () => {
   const estaOnline = useAppSelector(state => state.userReducer.online)
   console.log(estaOnline)
 
+
+
   return (
 
-    <header className="bg-grey-user opacity-100 fixed top-0 w-full z-50">
-     
+    <header className="bg-grey-user opacity-100 absolute top-0 w-full z-50 text-white h-[56px]">
+
 
       <nav className='max-w-[1280px] mx-auto py-2 flex flex-row justify-between'>
 

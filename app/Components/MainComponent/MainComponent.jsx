@@ -3,6 +3,8 @@ import React from 'react'
 import { useAppSelector } from "@/redux/hooks";
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import NavLateral from '../NavLateral/NavLateral';
+import AsideLateral from '../AsideLateral/AsideLateral';
 
 const MainComponent = ( {children} ) => {
   
@@ -18,9 +20,13 @@ const MainComponent = ( {children} ) => {
  
   return (
 
-    <main className={`${estaOnline ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}>
+    <main className={`relative w-[98%] grid grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}>
        
-        {children}
+       <NavLateral />
+
+         {children}
+
+       <AsideLateral />
 
     </main>
   )

@@ -13,7 +13,7 @@ import AsideLateral from "./Components/AsideLateral/AsideLateral";
 
 
 import UserProvider from "@/redux/provider";
-import MainComponent from "./Components/MainComponent/MainComponent";
+
 import ButtonState from "./Components/ButtonState/ButtonState";
 
 
@@ -28,34 +28,27 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 
-
-  const isLogued = false
-
-
-
   return (
 
-      <html lang="en">
-        <body className={inter.className}>
-         
-          <UserProvider> 
+    <html lang="en">
+      <body className={inter.className}>
+        {/*
+         <UserProvider> 
          
           <Background />
           <NavbarComponent />
 
           <ButtonState />
-          
-          <MainComponent >
 
-          
-            <NavLateral />
+          <main className={`relative w-[98%] grid grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}>
 
-            {children}
+          <NavLateral />      
+               
+              {children}          
 
-            <AsideLateral />
+          <AsideLateral />
 
-
-          </MainComponent>
+          </main>
 
          
 
@@ -64,8 +57,65 @@ export default function RootLayout({ children }) {
          
 
           </UserProvider>
-        </body>
-      </html>
+
+
+
+      <main className="bg-black/95 absolute w-full h-full">
+            <Background />
+
+            <NavbarComponent />
+
+            <ButtonState />
+
+            <div className="grid grid-cols-12 h-full pt-16">
+              <NavLateral />
+              {children}
+              <AsideLateral />
+            </div>
+
+            <OpcitionsBottomComponent />
+
+          </main>
+
+
+            <NavbarComponent />
+
+          <main className="h-[calc(100vh-106px)] w-[98%] grid grid-cols-12 pt-[65px] gap-x-1 mx-auto rounded-lg">
+
+            <NavLateral />
+            {children}
+            <OpcitionsBottomComponent />
+          </main>
+
+
+
+         */}
+        <Background />
+        <UserProvider>
+
+          <main className="absolte top-0 left-0 w-full max-h-screen flex flex-col items-center">
+
+            <NavbarComponent />
+
+            <section className="w-[98%] fixed grid grid-cols-12 gap-x-1 top-16 h-[calc(100vh-121px)]">
+
+              <NavLateral />
+
+              {children}
+
+              <AsideLateral />
+
+            </section>
+
+            <OpcitionsBottomComponent />
+            <FooterComponent />
+
+          </main>
+
+        </UserProvider>
+
+      </body>
+    </html>
 
   );
 }

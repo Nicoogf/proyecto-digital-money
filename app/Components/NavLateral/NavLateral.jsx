@@ -1,4 +1,5 @@
 'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -12,13 +13,22 @@ import profile from "../../../public/profile.jpg"
 import { useAppSelector } from '@/redux/hooks'
 
 
+
+
+
 const NavLateral = () => {
 
 
   const estaOnline = useAppSelector(state => state.userReducer.online)
 
+ 
+
   return (
-    <nav className={`${estaOnline ? "grid" : "hidden"}  bg-grey-user hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg`}>
+    <nav className={
+      ` bg-grey-user hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg
+       `}>
+
+
       <div className="flex flex-col my-4">
 
         <Link href="" className='text-green-lime flex flex-row items-center py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>

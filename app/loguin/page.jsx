@@ -14,7 +14,7 @@ const Loguin = ({ isLogued }) => {
   const [inPass, setInPass] = useState(false)
   const [seccion, setIsLogued] = useState(isLogued)
 
-  const estaOnline = useAppSelector( state => state.userReducer.online)
+  const estaOnline = useAppSelector(state => state.userReducer.online)
 
   const handleChange = ({ target }) => {
     setEmail(target.value)
@@ -33,7 +33,7 @@ const Loguin = ({ isLogued }) => {
   }
 
   return (
-    <section className={`${estaOnline ? "hidden" : ""} grid col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-gray-900/10 rounded-lg justify-center items-center`}>
+    <section className={`${estaOnline ? "invisible" : "grid"} col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-gray-900/10 rounded-lg justify-center items-center`}>
 
       <div className={`${!inPass ? "flex" : "opacity-0 hidden "} relative opacity-1 pb-16 w-[97%] max-w-[440px] bg-gray-600/20 rounded-lg flex flex-col transition-all duration-300`}>
         <h2 className='text-center font-bold py-4 text-lg'> ¡Hola! Ingresa tu E-mail</h2>
