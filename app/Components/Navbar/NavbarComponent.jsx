@@ -8,9 +8,15 @@ import profile from "../../../public/profile.jpg"
 
 import { MdOutlineArrowDropDown } from "react-icons/md";
 import Link from 'next/link';
-import { useSelector } from 'react-redux';
 
-const NavbarComponent = ({ isLogued }) => {
+
+import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+
+
+
+
+
+const NavbarComponent = () => {
 
   const [menuProfile, setMenuProfile] = useState(false)
 
@@ -18,11 +24,13 @@ const NavbarComponent = ({ isLogued }) => {
     setMenuProfile(!menuProfile)
   }
 
-
+  const estaOnline = useAppSelector(state => state.userReducer.online)
+  console.log(estaOnline)
 
   return (
 
     <header className="bg-grey-user opacity-100 fixed top-0 w-full z-50">
+     
 
       <nav className='max-w-[1280px] mx-auto py-2 flex flex-row justify-between'>
 
@@ -35,7 +43,7 @@ const NavbarComponent = ({ isLogued }) => {
           />
         </Link>
         {/*  Menu Usuario Logueado */}
-        {isLogued ?
+        {estaOnline ?
           (
             <div className={` ${menuProfile ? "rounded-b-none" : "rounded-b-lg"} py-[2px] relative flex flex-row mr-5 items-center gap-x-2 px-3 rounded-lg bg-grey-dark cursor-pointer z-50`}
               onClick={toggleMenu}>
@@ -72,7 +80,7 @@ const NavbarComponent = ({ isLogued }) => {
                 </Link>
               </div>
 
-              <MdOutlineArrowDropDown className={`${menuProfile ? "rotate-180" : ""} transition-all duration-300`}/>
+              <MdOutlineArrowDropDown className={`${menuProfile ? "rotate-180" : ""} transition-all duration-300`} />
 
             </div>
           )

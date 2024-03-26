@@ -9,8 +9,12 @@ import OpcitionsBottomComponent from "./Components/OptionsBottom/OpcitionsBottom
 import FooterComponent from "./Components/Footer/FooterComponent";
 import NavLateral from "./Components/NavLateral/NavLateral";
 import AsideLateral from "./Components/AsideLateral/AsideLateral";
-import { StoreProvider } from "./StoreProvider";
-import { useSelector } from "react-redux";
+
+
+
+import UserProvider from "@/redux/provider";
+import MainComponent from "./Components/MainComponent/MainComponent";
+
 
 
 
@@ -22,20 +26,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
   const isLogued = false
- 
+
 
 
   return (
-    <StoreProvider>
+
       <html lang="en">
         <body className={inter.className}>
+          <UserProvider> 
 
           <Background />
-          <NavbarComponent isLogued={isLogued} />
+          <NavbarComponent />
 
-          <main className={`${isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
-          >
+          
+          <MainComponent >
 
             <NavLateral />
 
@@ -43,7 +50,7 @@ export default function RootLayout({ children }) {
 
             <AsideLateral />
 
-          </main>
+          </MainComponent>
 
           <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
             isLogued={false}>
@@ -52,12 +59,12 @@ export default function RootLayout({ children }) {
 
           </main>
 
-          <OpcitionsBottomComponent isLogued={isLogued} />
-          <FooterComponent isLogued={isLogued} />
+          <OpcitionsBottomComponent />
+          <FooterComponent />
 
-
+          </UserProvider>
         </body>
       </html>
-    </StoreProvider>
+
   );
 }
