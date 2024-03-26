@@ -14,6 +14,7 @@ import AsideLateral from "./Components/AsideLateral/AsideLateral";
 
 import UserProvider from "@/redux/provider";
 import MainComponent from "./Components/MainComponent/MainComponent";
+import ButtonState from "./Components/ButtonState/ButtonState";
 
 
 
@@ -36,31 +37,31 @@ export default function RootLayout({ children }) {
 
       <html lang="en">
         <body className={inter.className}>
+         
           <UserProvider> 
-
+         
           <Background />
           <NavbarComponent />
 
+          <ButtonState />
           
           <MainComponent >
 
+          
             <NavLateral />
 
             {children}
 
             <AsideLateral />
 
+
           </MainComponent>
 
-          <main className={`${!isLogued ? "grid" : "hidden"} relative w-[98%] grid-cols-12 pt-[65px] gap-x-1 mx-auto  rounded-lg h-[calc(100vh-60px)]`}
-            isLogued={false}>
-
-            {children}
-
-          </main>
+         
 
           <OpcitionsBottomComponent />
           <FooterComponent />
+         
 
           </UserProvider>
         </body>

@@ -1,10 +1,20 @@
 'use client'
 import React from 'react'
-import { useAppSelector, useAppDispatch } from "@/redux/hooks";
+import { useAppSelector } from "@/redux/hooks";
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 
 const MainComponent = ( {children} ) => {
-
+  
   const estaOnline = useAppSelector(state => state.userReducer.online)
+  const router = useRouter()
+
+  {/*   useEffect(() => {
+    if(!estaOnline){
+        router.push("/loguin")
+    }
+  },[router])*/}
+
  
   return (
 
