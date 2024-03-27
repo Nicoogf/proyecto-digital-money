@@ -25,7 +25,7 @@ const NavLateral = () => {
 
   return (
     <nav className={
-      ` bg-grey-user hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg
+      ` bg-grey-user/95 hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg
        `}>
 
 
@@ -36,22 +36,22 @@ const NavLateral = () => {
           <h6 className="hidden xl:flex text-green-lime text-sm"> Inicio </h6>
         </Link>
 
-        <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+        <Link href="/pagar" className='text-green-lime flex flex-row items-center  py-3 gap-x-4 border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
           <FaUserFriends className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
           <h6 className="hidden xl:flex text-green-lime text-sm"> Pagar </h6>
         </Link>
 
-        <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+        <Link href="/transferir" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
           <RiSendPlaneFill className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
           <h6 className="hidden xl:flex text-green-lime text-sm"> Transferir </h6>
         </Link>
 
-        <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+        <Link href="/cbu" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
           <FaMoneyBillWave className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
           <h6 className="hidden xl:flex text-green-lime text-sm"> CBU </h6>
         </Link>
 
-        <Link href="" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
+        <Link href="/movimientos" className='text-green-lime flex flex-row items-center  py-3 gap-x-4  border-b-2 border-gray-900 hover:bg-grey-dark transition-all duration-200'>
           <GiReceiveMoney className="text-2xl mx-auto  xl:mx-0 xl:ml-4" />
           <h6 className="hidden xl:flex text-green-lime text-sm"> Movimientos </h6>
         </Link>

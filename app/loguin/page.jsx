@@ -67,16 +67,16 @@ const Loguin = ({ isLogued }) => {
 
       </div>
 
-      <div className={`${!inPass ? "opacity-0 hidden" : " opacity-1 flex"} relative pb-16 w-[97%] max-w-[440px] bg-gray-600/20 rounded-lg flex flex-col`}>
+      <div className={`${!inPass ? "opacity-0 hidden" : " opacity-1 flex"} text-white relative pb-16 w-[97%] max-w-[440px] bg-gray-600/20 rounded-lg flex flex-col`}>
         <h2 className='text-center font-bold py-4 text-lg'> Ingresar Contraseña</h2>
 
-        <div className='flex flex-row items-center mx-auto gap-x-4 bg-gray-900/50 px-5 py-3 rounded-lg  mb-6'>
-          <Image src={profile} className='w-10 h-10 rounded-full object-cover' />
-          <div>
-            <h3 className='text-xs text-gray-200 py-2'> {email} </h3>
+        <div className='flex flex-row items-center w-full gap-x-4 bg-gray-900/50  py-3  mb-6 px-16'>
+          <Image src={profile} className='w-12 h-12 rounded-full object-cover' />
+          <div className='w-[80%]'>
+            <h3 className='text-xs text-gray-200 py-2 font-semibold'> {email} </h3>
             <button
               onClick={backEmail}
-              className='w-full text-xs bg-gray-900 rounded-lg text-green-lime py-2 px-4 cursor-pointer flex flex-row items-center gap-x-2 hover:bg-green-lime hover:text-grey-dark transition-all duration-300 border border-green-lime justify-center'>
+              className='w-full text-[10px] bg-gray-900 rounded-lg text-green-lime py-2 px-4 cursor-pointer flex flex-row items-center gap-x-2 hover:bg-green-lime hover:text-grey-dark transition-all duration-300 border border-green-lime justify-center'>
               Cambiar Usuario
               <MdExitToApp />
             </button>
