@@ -10,7 +10,8 @@ import { MdOutlineArrowDropDown } from "react-icons/md";
 import Link from 'next/link';
 
 
-import { useAppSelector } from "@/redux/hooks";
+import { useAppDispatch, useAppSelector } from "@/redux/hooks";
+import { cambiarSesion } from '@/redux/features/userSlice';
 
 
 
@@ -25,6 +26,7 @@ const NavbarComponent = () => {
     setMenuProfile(!menuProfile)
   }
 
+  const dispatch = useAppDispatch()
   const estaOnline = useAppSelector(state => state.userReducer.online)
   console.log(estaOnline)
 
@@ -76,7 +78,7 @@ const NavbarComponent = () => {
                     Movimientos
                   </h6>
                 </Link>
-                <Link href="/">
+                <Link href="/" onClick={() => dispatch(cambiarSesion())}>
                   <h6 className='text-sm py-2 px-4 hover:bg-green-lime hover:text-grey-dark rounded-b-lg transition-all duration-200'>
                     Cerrar Sesion
                   </h6>
@@ -93,7 +95,7 @@ const NavbarComponent = () => {
               <Link href={"/loguin"}>
                 <h6 className='text-sm bg-grey-user border border-green-lime text-green-lime px-3 py-1 rounded-lg  hover:bg-green-lime hover:text-grey-dark transition-all duration-200 font-normal'> Ingresar</h6>
               </Link>
-              <Link href={""}>
+              <Link href={"/register"}>
                 <h6 className='text-gray-400 text-sm border border-gray-400  px-3 py-1 rounded-lg hover:bg-gray-100 hover:text-grey-dark transition-all duration-200 font-normal'> Registrarse</h6>
               </Link>
 

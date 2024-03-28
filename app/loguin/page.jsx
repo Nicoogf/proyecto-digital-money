@@ -6,13 +6,14 @@ import { useState } from 'react'
 import profile from "../../public/profile.jpg"
 import { MdExitToApp } from "react-icons/md";
 
-import { useAppSelector } from '@/redux/hooks'
+import { useAppDispatch, useAppSelector } from '@/redux/hooks'
+import { cambiarSesion } from '@/redux/features/userSlice'
 
-const Loguin = ({ isLogued }) => {
+const Loguin = () => {
 
   const [email, setEmail] = useState("")
   const [inPass, setInPass] = useState(false)
-  const [seccion, setIsLogued] = useState(isLogued)
+  const dispatch = useAppDispatch()
 
   const estaOnline = useAppSelector(state => state.userReducer.online)
 
@@ -24,16 +25,14 @@ const Loguin = ({ isLogued }) => {
     e.preventDefault()
   }
 
-  const toggleSeccion = () => {
-    setIsLogued(!seccion)
-  }
+
 
   const backEmail = () => {
     setInPass(!inPass)
   }
 
   return (
-    <section className={`${estaOnline ? "invisible" : "grid"} text-white col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-gray-900/10 rounded-lg justify-center items-center`}>
+    <section className={`${estaOnline ? "invisible" : "grid"} text-white col-span-12  bg-gray-900/10 rounded-lg justify-center items-center`}>
 
       <div className={`${!inPass ? "flex" : "opacity-0 hidden "} relative opacity-1 pb-16  max-w-[450px] bg-gray-600/20 rounded-lg flex flex-col transition-all duration-300 px-16`}>
         <h2 className='text-center font-bold py-4 text-lg'> ¡Hola! Ingresa tu E-mail</h2>
@@ -84,7 +83,7 @@ const Loguin = ({ isLogued }) => {
 
         </div>
 
-        <form className='flex flex-col gap-y-3'>
+        <form className='flex flex-col gap-y-3' onSubmit={handleSubmit}>
 
           <input type='password'
             placeholder='Ingesar tu contraseña'
@@ -92,11 +91,12 @@ const Loguin = ({ isLogued }) => {
 
           <div className='flex flex-col items-center gap-y-3'>
 
-            <button
-              onClick={toggleSeccion}
+            <Link
+              href="/movimientos"
+              onClick={() => dispatch(cambiarSesion())}
               className='text-sm bg-transparent font-semibold text-green-lime border border-green-lime py-2 px-3 rounded-lg w-[65%] hover:bg-green-lime hover:text-grey-dark transition-all duration-300'>
               Ingresar
-            </button>
+            </Link>
 
           </div>
 

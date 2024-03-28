@@ -7,9 +7,10 @@ import Link from "next/link";
 export default function Home() {
 
   const estaOnline = useAppSelector(state => state.userReducer.online)
+
   return (
 
-    <section className={`relative bg-fondo bg-center bg-no-repeat bg-cover grid col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-blue-500 rounded-lg`}>
+    <section className={` ${ estaOnline ? " col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7" : "col-span-12"} relative bg-fondo bg-center bg-no-repeat bg-cover grid  bg-blue-500 rounded-lg`}>
 
       <article className=" pl-3 pt-3 sm:pl-5 sm:pt-5 flex flex-col gap-y-1">
         <h2 className="text-white font-semibold text-base sm:text-2xl"> De ahora en </h2>
@@ -18,7 +19,7 @@ export default function Home() {
         <div className="border border-green-lime w-[40%] " />
         <h4 className="text-green-lime text-base sm:text-xl "> Tu nueva </h4>
         <h4 className="text-green-lime font-semibold text-base sm:text-xl"> billetera virtual</h4>
-        <Link href="" className="mx-auto sm:mx-0 mt-4 sm:mt-8 border border-transparent w-[150px] sm:w-[200px] py-1 rounded-lg bg-green-lime hover:border-green-lime hover:bg-transparent hover:text-green-lime transition duration-200">
+        <Link href={estaOnline ? "/movimientos" : "/loguin"} className="mx-auto sm:mx-0 mt-4 sm:mt-8 border border-transparent w-[150px] sm:w-[200px] py-1 rounded-lg bg-green-lime hover:border-green-lime hover:bg-transparent hover:text-green-lime transition duration-200">
           <h5 className="text-grey-drak text-center font-semibold"> Comenza ahora </h5>
         </Link>
       </article>

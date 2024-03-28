@@ -27,10 +27,9 @@ const NavLateral = () => {
 
 
 
+
   return (
-    <nav className={
-      ` bg-grey-user/95 hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg
-       `}>
+    <nav className={`${estaOnline ? " bg-grey-user/95 hidden sm:grid sm:col-span-1 xl:col-span-2 rounded-lg" : "hidden"}  `}>
 
 
       <div className="flex flex-col my-4">

@@ -1,10 +1,16 @@
+'use client'
 import React from 'react'
 import bitcoin from "../../../public/bitcoin.png"
 import Image from 'next/image'
+import { useAppSelector } from '@/redux/hooks'
 
 const AsideLateral = () => {
+
+  const estaOnline = useAppSelector(state => state.userReducer.online)
+
   return (
-    <aside className={`hidden lg:grid bg-grey-user/95 text-white lg:col-span-3 rounded-lg`}>
+    <aside className={` ${estaOnline ? "hidden lg:grid bg-grey-user/95 text-white lg:col-span-3 rounded-lg"
+      : "hidden"}`}>
 
       <div className='flex flex-col '>
 
