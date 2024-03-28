@@ -7,6 +7,7 @@ import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
 import profiledos from "../../public/profiledos.png"
+import Link from 'next/link';
 
 const Loguin = () => {
 
@@ -37,10 +38,10 @@ const Loguin = () => {
 
                 <div className='flex flex-row w-[80%] mx-auto justify-between mt-6'>
 
-                    <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
+                    <Link href="/ingresar" className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
                         <h6 className='text-sm'> Ingresar </h6>
-                    </article>
+                    </Link>
 
                     <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
