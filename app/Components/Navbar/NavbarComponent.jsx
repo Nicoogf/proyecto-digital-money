@@ -66,12 +66,12 @@ const NavbarComponent = () => {
               <div
                 className={`${menuProfile ? "opacity-100 visible " : "opacity-0 invisible -right-5"} absolute z-0  top-[40px] right-[0.1px] w-full transition-all duration-200 flex-col bg-grey-dark rounded-b-lg`}
               >
-                <Link href="/">
+                <Link href="/profile">
                   <h6 className='text-sm py-2 px-4 hover:bg-green-lime hover:text-grey-dark transition-all duration-200 border-b border-t border-gray-800'>
                     Perfil
                   </h6>
                 </Link>
-                <Link href="/">
+                <Link href="/movimientos">
                   <h6 className='text-sm  py-2 px-4 hover:bg-green-lime hover:text-grey-dark transition-all duration-200 border-b border-gray-800'>
                     Movimientos
                   </h6>

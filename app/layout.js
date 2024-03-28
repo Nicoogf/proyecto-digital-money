@@ -97,7 +97,7 @@ export default function RootLayout({ children }) {
 
             <NavbarComponent />
 
-            <section className="w-[98%] fixed grid grid-cols-12 gap-x-1 top-16 h-[calc(100vh-121px)]">
+            <section className="w-[98%] max-w-[1440px] fixed grid grid-cols-12 gap-x-1 top-16 h-[calc(100vh-121px)]">
 
               <NavLateral />
 

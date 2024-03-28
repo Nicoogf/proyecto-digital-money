@@ -12,6 +12,14 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         'fondo': "url('/fondo.jpg')",
+        'fondonike': "url('/nike.png')",
+        'fondomcdonals': "url('/mcdonals.jpg')",
+        'fondoaxion': "url('/axion.jpg')",
+        'fondowalmart': "url('/walmart.png')",
+        'fondomercadolibre': "url('/mercadolibre.png')",
+        'fondoparamount': "url('/paramount.png')",
+        'fondosolodeportes': "url('/solodeportes.png')",
+        'fondofarmacity': "url('/farmacity.png')",
       },
       colors: {
         "green-lime": '#C1FD35',
