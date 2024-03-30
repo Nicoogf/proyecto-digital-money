@@ -1,23 +1,33 @@
 
+'use client'
 import Image from 'next/image';
-import React from 'react'
+import React, { useState } from 'react'
 import { FaRegEye, FaUserAlt } from "react-icons/fa";
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineCancel } from "react-icons/md";
 import { IoIosArrowUp } from "react-icons/io";
+import { IoCloseCircleOutline } from "react-icons/io5";
 import profiledos from "../../public/profiledos.png"
 import Link from 'next/link';
+import TitleSeccion from '../Components/TitleSeccion/TitleSeccion';
 
 const Loguin = () => {
 
+    const [menuCbu , setMenuCbu] =  useState(false)
+    const toggleMenuCbu = () =>{
+        setMenuCbu(!menuCbu)
+    }
 
 
     return (
-        <section className={`grid col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-green-400 rounded-lg`}>
-            <article className='bg-gray-900 w-[95%] mx-auto text-white'>
+        <section className={`relative grid col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-green-400 rounded-lg`}>
 
-                <div className='flex flex-row justify-between w-[90%] mx-auto mt-8 items-center'>
+            <TitleSeccion titleComponent="Estado de cuenta"/>
+
+            <article className=' bg-gray-900 w-[95%] mx-auto text-white -mt-8'>                
+
+                <div className='flex flex-row justify-between w-[90%] mx-auto items-center'>
                     <div className='flex flex-row gap-x-2 items-center'>
                         <h6 className='font-thin text-2xl'> Disponible</h6>
                         <h6 className='text-xs flex flex-row gap-x-1 items-center text-green-500'>
@@ -49,7 +59,7 @@ const Loguin = () => {
                     </Link>
 
 
-                    <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
+                    <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg' onClick={toggleMenuCbu}>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
                         <h6 className='text-sm'> Tu CBU </h6>
                     </article>
@@ -139,7 +149,25 @@ const Loguin = () => {
 
 
 
+
             </article>
+
+            <section className={` ${menuCbu ? " absolute w-full top-0 bottom-0 bg-gray-950/95 rounded-lg opacity-100 flex items-center justify-center" : "hidden"}`}>
+                <div className='text-white'>
+                    <div className='flex flex-row justify-between items-center'>
+                     <h3> Hola , Nicolas</h3>
+                     <IoCloseCircleOutline className='text-3xl cursor-pointer' onClick={toggleMenuCbu}/>
+
+                    </div>
+                  
+                    <h4>
+                        Tu cvu de identificacion personal es :
+                    </h4>
+                    <h4>
+                        0000000000000000000000000
+                    </h4>
+                </div>
+            </section>
         </section>
     )
 }

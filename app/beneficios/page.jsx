@@ -1,12 +1,13 @@
 
 import React from 'react'
+import TitleSeccion from '../Components/TitleSeccion/TitleSeccion'
 const Beneficios = () => {
 
 
 
     return (
         <section className={`grid col-span-12 sm:col-span-11 lg:col-span-8 xl:col-span-7 bg-grey-dark/90 rounded-lg p-4 `}>
-
+            <TitleSeccion titleComponent="Beneficios" />
             <section className='grid grid-cols-12 gap-4 text-white'>
 
                 <article className='opacity-50 relative bg-fondonike bg-no-repeat bg-cover bg-center border-2 border-gray-900  rounded-lg col-span-4 row-span-1 flex justify-center flex-col overflow-hidden hover:opacity-100 hover:border-lime-500 transition-all duration-200 cursor-pointer'>
