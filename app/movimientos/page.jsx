@@ -36,22 +36,18 @@ const Loguin = () => {
                     <FaRegEye className='text-2xl cursor-pointer' />
                 </div>
 
-                <div className='flex flex-row w-[80%] mx-auto justify-between mt-6'>
+                <div className='flex flex-row w-[80%] mx-auto justify-center gap-x-4 mt-6'>
 
                     <Link href="/ingresar" className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
                         <h6 className='text-sm'> Ingresar </h6>
                     </Link>
 
-                    <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
+                    <Link href="/enviar" className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
                         <h6 className='text-sm'> Enviar </h6>
-                    </article>
+                    </Link>
 
-                    <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
-                        <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
-                        <h6 className='text-sm'> Retirar </h6>
-                    </article>
 
                     <article className='flex flex-col gap-y-2 items-center cursor-pointer bg-gray-700 p-2 rounded-lg'>
                         <RiSendPlaneFill className='bg-gray-400 text-5xl rounded-xl p-2' />
