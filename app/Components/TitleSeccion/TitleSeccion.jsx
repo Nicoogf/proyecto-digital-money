@@ -7,7 +7,7 @@ import Image from 'next/image';
 
 const TitleSeccion = (props) => {
     return (
-        <nav className='w-full'>
+        <nav className='absolute w-full z-50'>
             <section className='bg-grey-dark w-full rounded-t-md py-1 text-green-lime'>
                 <div className='flex flex-row w-[90%] mx-auto gap-x-2 mb-2'>
                     <Image src={profile} className='w-8 h-8 object-cover rounded-full' />

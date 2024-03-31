@@ -1,11 +1,13 @@
 import Image from 'next/image'
 import React from 'react'
 import profile from "../../public/profile.jpg"
+import TitleSeccion from '../Components/TitleSeccion/TitleSeccion'
 
 const Profile = () => {
     return (
         <section className='relative col-span-12 sm:col-span-11 md:col-span-10 lg:col-span-7 rounded-lg bg-gray-900/80'>
 
+            <TitleSeccion titleComponent="Perfil"/>
             <div className='bg-gray-700 rounded-lg flex flex-row items-center justify-between w-[90%] mx-auto p-4 mt-6'>
                 <div className='flex flex-row items-center gap-x-2'>
                     <Image src={profile} alt="Profile" className='w-10 h-10 rounded-full object-cover' />

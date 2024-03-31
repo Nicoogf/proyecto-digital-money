@@ -25,7 +25,7 @@ const Loguin = () => {
 
             <TitleSeccion titleComponent="Estado de cuenta"/>
 
-            <article className=' bg-gray-900 w-[95%] mx-auto text-white -mt-8'>                
+            <article className=' bg-gray-800 w-[95%] mx-auto text-white mt-24'>                
 
                 <div className='flex flex-row justify-between w-[90%] mx-auto items-center'>
                     <div className='flex flex-row gap-x-2 items-center'>
@@ -144,11 +144,6 @@ const Loguin = () => {
                     </div>
 
                 </div>
-
-
-
-
-
 
             </article>
 
