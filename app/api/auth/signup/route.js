@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import User from "@/models/user";
+import bcrypt from "bcryptjs" ;
+import { connectDB } from "@/libs/mongodb";
 
 export async function POST(request) {
     const { fullname, email, password } = await request.json()
@@ -11,7 +13,9 @@ export async function POST(request) {
         status: 400
     })
 
-    const userFound = await User.findOne({ email })
+    try {
+        await connectDB()
+        const userFound = await User.findOne({ email })
 
     if (userFound) return NextResponse.json({
         message: "El email ya existe"
@@ -33,5 +37,9 @@ export async function POST(request) {
     console.log(userSaved)
 
     return NextResponse.json(userSaved)
+    } catch (error) {
+        console.log(error)
+        return NextResponse.error()
+    }
 
 }
