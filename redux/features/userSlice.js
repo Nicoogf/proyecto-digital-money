@@ -1,7 +1,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 
 const initialState = {
-    online: true
+    online: false
 }
 
 export const userSlice = createSlice({

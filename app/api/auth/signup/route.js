@@ -4,8 +4,8 @@ import bcrypt from "bcryptjs" ;
 import { connectDB } from "@/libs/mongodb";
 
 export async function POST(request) {
-    const { fullname, email, password } = await request.json()
-    console.log(fullname, email, password)
+    const { name,lastname,identification, email, password,confirmPassword ,telefono} = await request.json()
+    console.log(name,lastname,identification, email, password,confirmPassword ,telefono)
 
     if (!password || password.length < 6) return NextResponse.json({
         message: "La contraseña debe tener al menos 6 caracteres"
@@ -28,18 +28,32 @@ export async function POST(request) {
 
     const user = new User({
         email,
-        fullname,
+        name,
+        lastname,
+        identification,
+        telefono,
         password: hashedPassword
     })
 
 
-    const userSaved = await user.save()
-    console.log(userSaved)
+    const savedUser = await user.save()
+    console.log(savedUser)
 
-    return NextResponse.json(userSaved)
+    return NextResponse.json({
+        _id : savedUser._id,
+        email : savedUser.email,
+        name : savedUser.name
+    })
     } catch (error) {
         console.log(error)
-        return NextResponse.error()
+     if( error instanceof Error){
+        return NextResponse.json({
+            message : error.message
+        },
+        {
+            status:400
+        }
+      );
+     }   
     }
-
 }
